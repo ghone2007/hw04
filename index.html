@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>GETTING STARTED WITH BRACKETS</title>
+        <meta name="description" content="An interactive getting started guide for Brackets.">
+     
+        <script src="https://d3js.org/d3.v3.js"></script>
+    </head>
+    
+    <body>
+       <svg width="400" height="300"></svg>
+        <script>
+           
+            
+            for(var i=0; i<20; i++){
+              var thisNum = random(20,300);
+              d3.select("svg")
+                .append("rect")
+                .attr({
+                x: 10,
+                y: 10+12*i,
+                width: thisNum,
+                height: 10,
+                fill: "red"
+              });
+              d3.select("svg")
+                .append("text")
+                .attr({
+                x: thisNum+15,
+                y: 20+12*i,
+                "font-size": 12
+              }).text(thisNum);
+            }
+            function random(n,m){
+              return Math.ceil(Math.random()*(m-n)+n);
+            }    
+        </script>
+
+    </body>
+</html>
